@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" />
+  </head>
+  <!-- style go here.. -->
+  <style>
+    .close {
+      color: red;
+    }
+  </style>
+
+  <body>
+    <!-- yep..! I love forrest Gump -->
+    <img src="./assets/ForrestGump.gif" alt="Forrest Gump" />
+
+    <!-- input field and add button -->
+    <div id="myDIV" class="header">
+      <h2 style="margin: 5px;">Todo list</h2>
+      <input type="text" id="myInput" placeholder="Title..." />
+      <button onclick="newElement()" class="addBtn">Add</button>
+    </div>
+
+    <!-- this is where the magic happens -->
+    <ul id="myUL"></ul>
+
+    <script>
+      // Create a new list item
+      function newElement() {
+        var li = document.createElement("li");
+        var inputValue = document.getElementById("myInput").value;
+        var t = document.createTextNode(inputValue);
+        li.appendChild(t);
+        if (inputValue === "") {
+          alert("You must write something!");
+        } else {
+          document.getElementById("myUL").appendChild(li);
+        }
+        //reset the input field
+        document.getElementById("myInput").value = "";
+        // append the remove element
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("[remove]");
+        span.className = "close";
+        span.appendChild(txt);
+        span.onclick = function (event) {
+          event.target.parentElement.style.display = "none";
+        };
+        li.appendChild(span);
+      }
+    </script>
+  </body>
+</html>
