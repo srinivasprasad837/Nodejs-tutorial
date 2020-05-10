@@ -1,0 +1,32 @@
+2 + 2
+2 * 2
+window
+document
+
+document.title
+document.title = "Hello" 
+document.getElementById("our-headline")
+document.getElementById("our-headline").innerHTML = "This is a test"
+var ourHeadline = document.getElementById("our-headline")
+listitems
+listitems[0]
+listitems.innerHTML = "Hello world" // wont work
+here listitems is not pointing to a element.
+Instead it is the collections of references to 5 different elements 
+so instead we need to access individual items indivedually
+listitems[0].innerHTML = "Hello world"
+Do we really have to do that 5 times ?
+Instead we tell js to loop through our collection automatically
+for (var i = 0; i < listItems.length; i++) {
+  listItems[i].innerHTML = 'Hello World';
+}
+
+
+
+New Item didnt exist when page loaded, we initiallly created the variable
+event delegations
+
+document.querySelector("#grocery-list");
+document.querySelectorAll("#grocery-list li");
+
+<link rel="stylesheet" href="style.css" />
